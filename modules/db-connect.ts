@@ -1,8 +1,8 @@
 import { ConnectionOptions } from "typeorm"
-import survey from '../src/entity/survey'
-import question from '../src/entity/question'
-import option from '../src/entity/option'
-import answer from '../src/entity/answer'
+import survey from '../src/entity/Survey'
+import question from '../src/entity/Question'
+import option from '../src/entity/Option'
+import Answer from '../src/entity/Answer'
 
 const connectionPool: ConnectionOptions = {
     name: "default",
@@ -18,7 +18,7 @@ const connectionPool: ConnectionOptions = {
         survey,
         question,
         option,
-        answer
+        Answer
     ],
     extra: {
         "connectionLimit": 10
