@@ -7,3 +7,5 @@ module.exports = {
         })
     }
 }
+export default {module, async failedConnectionServer(res : any ,error: any){}}
+

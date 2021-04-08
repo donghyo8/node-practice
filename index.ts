@@ -11,7 +11,7 @@ routes.use(cors());
 routes.use(express.json());
 routes.use(cookieParser());
 routes.use(logger('dev'));
-routes.use(express.urlencoded({ extended: false }));
+routes.use(express.urlencoded({ extended: true}));
 
 // DB Connect
 createConnection(connectionOptions)
@@ -24,10 +24,10 @@ createConnection(connectionOptions)
 
 // ROUTER
 import indexRouter from './router/index'
-// import surveyRouter from './routes/survey'
+import surveyRouter from './router/survey'
 
 routes.use('/', indexRouter);
-// routes.use('/survey', surveyRouter);
+routes.use('/survey', surveyRouter);
 
 // ERROR HANDLER
 import errorHandler from './modules/error-handler-middleware'

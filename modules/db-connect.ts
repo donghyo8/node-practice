@@ -6,7 +6,7 @@ import Answer from '../src/entity/Answer'
 
 const connectionPool: ConnectionOptions = {
     name: "default",
-    type: "mysql",
+    type: "mariadb",
     host: "localhost",
     port: 3306,
     username: "donghyo",

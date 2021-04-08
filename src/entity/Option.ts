@@ -1,6 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany} from "typeorm";
 import Question from "./Question";
-import Survey from "./Survey";
 
 @Entity()
 export class Option {
@@ -10,7 +9,7 @@ export class Option {
     @Column()
     option_name : string;
 
-    @ManyToOne(type => Question, question => question.options)
+    @ManyToOne(type => Question, question => question.options, {onDelete: 'CASCADE', onUpdate: "CASCADE"})
     question: Question;
 
 }

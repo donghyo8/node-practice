@@ -1,9 +1,9 @@
-import {Entity, PrimaryColumn, OneToMany, Column} from "typeorm";
+import {Entity, PrimaryColumn, OneToMany, Column, PrimaryGeneratedColumn} from "typeorm";
 import Question from "./Question";
 
 @Entity()
 export class Survey {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id : number;
 
     @Column()
@@ -11,6 +11,7 @@ export class Survey {
 
     @OneToMany(type => Question, question => question.survey)
     questions: Question[];
+
 }
 
 export default Survey
