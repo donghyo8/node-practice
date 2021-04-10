@@ -7,10 +7,10 @@ export class Question {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ nullable: true })
     question_name : string;
 
-    @ManyToOne(type => Survey, survey => survey.questions)
+    @ManyToOne(type => Survey, survey => survey.questions, {cascade: true, onDelete: 'CASCADE', onUpdate: "CASCADE"})
     survey: Survey;
 
     @OneToMany(type => Option, option => option.question)

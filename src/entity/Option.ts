@@ -6,11 +6,11 @@ export class Option {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ nullable: true })
     option_name : string;
 
-    @ManyToOne(type => Question, question => question.options, {onDelete: 'CASCADE', onUpdate: "CASCADE"})
-    question: Question;
+    @ManyToOne(type => Question, question => question.options, {cascade: true, onDelete: 'CASCADE', onUpdate: "CASCADE"})
+    question: number | undefined;
 
 }
 
